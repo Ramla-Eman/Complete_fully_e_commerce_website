@@ -27,7 +27,7 @@ const links=[
 const Navbar = () => {
   return (
     <div className='border-b-2 border-[#F5F5F5] py-5'>
-      <div className='flex justify-between items-center mx-auto max-w-6xl pt-7'>
+      <div className='flex justify-between items-center mx-auto max-w-6xl pt-6'>
         <div>
           <h1 className='text-2xl font-bold font-inter'>Exclusive</h1>
         </div>

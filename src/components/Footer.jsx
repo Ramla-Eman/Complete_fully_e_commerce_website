@@ -104,7 +104,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="w-full flex items-center justify-center gap-1 text-[16px] border-t pt-5 px-5">
+        <div className="w-full flex items-center justify-center gap-1 text-[16px] border-t border-[#f5f5f5a2] pt-5 px-5 text-[#f5f5f5a2]">
           <MdOutlineCopyright className="sm:block hidden"/>
           <p className="text-center">Copyright Software Synergy Team 2025. All right reserved.</p>
         </div>
