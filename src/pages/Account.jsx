@@ -1,5 +1,5 @@
 import React from 'react'
-import PageBreadcrumbs from '../components/ui/PageBreadcrumbs'
+import PageBreadcrumbs from '../components/PageBreadcrumbs'
 
 const Account = () => {
   return (
