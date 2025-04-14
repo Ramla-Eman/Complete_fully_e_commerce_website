@@ -46,7 +46,10 @@ const Navbar = () => {
           >
             {rightToggle ? <HiMenuAlt2 size={35} /> : <IoMdClose size={35} />}
           </div>
-          <h1 className="text-2xl font-bold font-inter">Exclusive</h1>
+          {/* Logo */}
+          <Link to="/">
+            <h1 className="text-3xl font-bold font-poppins text-black cursor-pointer">Exclusive</h1>
+          </Link>
         </div>
         <div
           className={`flex items-center justify-center md:w-auto w-full z-50 md:static absolute top-20 left-0 ${
@@ -66,10 +69,17 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex gap-4">
+          {/* search bar component for navbar */}
           <SearchBar/>
           <div className="flex items-center justify-center gap-2 text-2xl">
-            <GoHeart />
-            <IoCartOutline />
+            {/* Wishlist Link And icon */}
+            <Link to="/wishlist">
+              <GoHeart />
+            </Link>
+            {/* Cart link and icon */}
+            <Link to="/cart">
+              <IoCartOutline />
+            </Link>
           </div>
         </div>
       </div>
