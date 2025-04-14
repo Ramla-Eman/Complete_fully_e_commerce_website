@@ -1,8 +1,11 @@
 import React from 'react'
+import PageBreadcrumbs from '../components/ui/PageBreadcrumbs'
 
 const Error_404 = () => {
   return (
-    <div>Error_404</div>
+    <div>
+      <PageBreadcrumbs/>
+    </div>
   )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import PageBreadcrumbs from '../components/ui/PageBreadcrumbs'
 
 const Wishlist = () => {
   return (
-    <div>Wishlist</div>
+    <div>
+      <PageBreadcrumbs/>
+    </div>
   )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
+import PageBreadcrumbs from '../components/ui/PageBreadcrumbs'
 
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <div>
+      <PageBreadcrumbs/>
+    </div>
   )
 }
 
