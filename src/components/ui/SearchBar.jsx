@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FiSearch } from "react-icons/fi";
+import { IoIosClose } from "react-icons/io";
 
 const NavbarSearch = () => {
   const [showMobileSearch, setShowMobileSearch] = useState(false);
@@ -23,12 +24,13 @@ const NavbarSearch = () => {
 
       {/* Mobile full search input */}
       {showMobileSearch && (
-        <div className="block md:hidden w-full px-4 py-3 bg-[#F5F5F5] absolute top-[78px] left-0 z-40 transition-all duration-300">
+        <div className="md:hidden w-full px-4 py-3 bg-[#F5F5F5] flex absolute top-[78px] left-0 z-40 transition-all duration-300">
           <input
             type="text"
             placeholder="What are you looking for?"
             className="w-full px-4 py-2 outline-none rounded "
           />
+          <IoIosClose className="absolute right-4 top-5 cursor-pointer text-4xl text-[#DB4444]" onClick={() => setShowMobileSearch(!showMobileSearch)}/>
         </div>
       )}
     </>

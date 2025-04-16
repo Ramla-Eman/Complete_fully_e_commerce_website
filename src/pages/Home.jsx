@@ -3,7 +3,7 @@ import React from "react";
 import Hero from "../components/Hero";
 import HomeTodays from "../components/HomeTodays";
 import Categories from "../components/Categories";
-import ThisMonth from "../components/ThisMonth";
+import Thismonth from "../components/Thismonth";
 import HomeBanner from "../components/HomeBanner";
 import OurProducts from "../components/OurProducts";
 import HomeFeautered from "../components/HomeFeautered";
@@ -20,7 +20,7 @@ const Home = () => {
         {/* categories */}
         <Categories/>
         {/* This Month */}
-        <ThisMonth/>
+        <Thismonth/>
         {/* Home banner */}
         <HomeBanner/>
         {/* Our products */}
