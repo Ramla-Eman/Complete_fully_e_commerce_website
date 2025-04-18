@@ -1,5 +1,6 @@
 import React from "react";
 import PageBreadcrumbs from "../components/PageBreadcrumbs";
+import { Link } from "react-router-dom";
 
 const Error_404 = () => {
   return (
@@ -13,9 +14,11 @@ const Error_404 = () => {
             </h2>
             <p>Your visited page not found. You may go home page.</p>
           </div>
-          <button className="bg-[#DB4444] text-white py-4 px-10 cursor-pointer rounded">
-            Back to home page
-          </button>
+          <Link to="/">
+            <button className="bg-[#DB4444] text-white py-4 px-10 cursor-pointer rounded">
+              Back to home page
+            </button>
+          </Link>
         </div>
       </div>
     </section>
