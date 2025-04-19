@@ -41,23 +41,25 @@ const Categories = () => {
           <div className="bg-[#DB4444] w-4 h-8 rounded"></div>
           <p className="text-[#DB4444]">Categories</p>
         </div>
-        <h4 className="text-3xl font-semibold font-inter">
-          Browse By Category
-        </h4>
-      </div>
-      {/* previous and next */}
-      <div className="my-6">
-        <div className="flex items-center justify-end gap-4">
-          {/* previous */}
-          <div className="group">
-            <div className="bg-[#f5f5f5] group-hover:bg-[#00000063] group-active:bg-[#00000063] text-black group-hover:text-white group-active:text-white w-10 h-10 rounded-full flex items-center justify-center">
-              <IoIosArrowRoundBack className="text-4xl"/>
-            </div>
-          </div>
-          {/* next */}
-          <div className="group">
-            <div className="bg-[#f5f5f5] group-hover:bg-[#00000063] group-active:bg-[#00000063] text-black group-hover:text-white group-active:text-white w-10 h-10 rounded-full flex items-center justify-center">
-              <IoIosArrowRoundForward className="text-4xl"/>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between">
+          <h4 className="text-3xl font-semibold font-inter">
+            Browse By Category
+          </h4>
+          {/* previous and next */}
+          <div className="my-6">
+            <div className="flex items-center justify-end gap-4">
+              {/* previous */}
+              <div className="group">
+                <div className="bg-[#f5f5f5] group-hover:bg-[#00000063] group-active:bg-[#00000063] text-black group-hover:text-white group-active:text-white w-10 h-10 rounded-full flex items-center justify-center">
+                  <IoIosArrowRoundBack className="text-4xl" />
+                </div>
+              </div>
+              {/* next */}
+              <div className="group">
+                <div className="bg-[#f5f5f5] group-hover:bg-[#00000063] group-active:bg-[#00000063] text-black group-hover:text-white group-active:text-white w-10 h-10 rounded-full flex items-center justify-center">
+                  <IoIosArrowRoundForward className="text-4xl" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
