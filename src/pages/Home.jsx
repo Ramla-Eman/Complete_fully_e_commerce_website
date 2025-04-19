@@ -12,7 +12,7 @@ import ServicesBagdges from "../components/ServicesBagdges";
 const Home = () => {
   return (
     <section>
-      <div className="max-w-7xl mx-auto pt-6 px-6 py-5">
+      <div className="max-w-7xl mx-auto px-6 pb-5">
         {/* Hero */}
         <Hero/>
         {/* Today's */}

@@ -5,7 +5,7 @@ import HeroBanner from './ui/HeroBanner'
 
 const Hero = () => {
   return (
-    <div>
+    <div className='flex gap-5'>
       {/* Category Dropdown */}
       <CategoryDropdown/>
       {/* Hero Banner */}
