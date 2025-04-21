@@ -17,8 +17,10 @@ const Home = () => {
         <Hero/>
         {/* Today's */}
         <HomeTodays/>
+        <hr className="border border-[#F5F5F5]"/>
         {/* categories */}
         <Categories/>
+        <hr className="border border-[#F5F5F5]"/>
         {/* This Month */}
         <Thismonth/>
         {/* Home banner */}
