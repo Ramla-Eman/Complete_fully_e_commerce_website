@@ -1,11 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 // components
+import { Link, useNavigate } from "react-router-dom";
 import PageBreadcrumbs from "../../components/PageBreadcrumbs";
+import { Timestamp, addDoc, collection } from "firebase/firestore";
+import { auth, fireDb } from "../../firebase/FirebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import toast from "react-hot-toast";
 // image
 import Image from "../../assets/registrationImg.jpg";
-import { Link } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
+  const [userSignup, setUserSignup] = useState({
+    name: "",
+    email: "",
+    password: "",
+    role: "user",
+  });
+
+  const userSignupFunction = async (e) => {
+    e.preventDefault();
+    if (
+      userSignup.name === "" ||
+      userSignup.email === "" ||
+      userSignup.password === ""
+    ) {
+      toast.error("All Fields are required");
+    }
+
+    try {
+      const users = await createUserWithEmailAndPassword(
+        auth,
+        userSignup.email,
+        userSignup.password
+      );
+
+      const user = {
+        name: userSignup.name,
+        email: users.user.email,
+        uid: users.user.uid,
+        role: userSignup.role,
+        time: Timestamp.now(),
+        date: new Date().toLocaleString("en-US", {
+          month: "short",
+          day: "2-digit",
+          year: "numeric",
+        }),
+      };
+
+      const userRefrence = collection(fireDb, "user");
+
+      addDoc(userRefrence, user);
+
+      setUserSignup({
+        name: "",
+        email: "",
+        password: "",
+      });
+
+      toast.success("Signup Successfully");
+
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <section>
       <div className="max-w-7xl mx-auto pt-6 px-6 py-5">
@@ -23,23 +84,45 @@ const Signup = () => {
               <p className="font-poppins">Enter your details below</p>
             </div>
             <div className="">
-              <form action="" className="flex flex-col gap-4">
+              <form
+                className="flex flex-col gap-4"
+              >
+                {/* name input */}
                 <input
                   type="text"
                   placeholder="Name"
                   className="border-b border-[#00000063] py-2 outline-0 "
+                  value={userSignup.name}
+                  onChange={(e) =>
+                    setUserSignup({ ...userSignup, name: e.target.value })
+                  }
                 />
+                {/* email input */}
                 <input
                   type="email"
                   placeholder="Email or Phone Number"
                   className="border-b border-[#00000063] py-2 outline-0 "
+                  value={userSignup.email}
+                  onChange={(e) =>
+                    setUserSignup({ ...userSignup, email: e.target.value })
+                  }
                 />
+                {/* password input */}
                 <input
                   type="password"
                   placeholder="Password"
                   className="border-b border-[#00000063] py-2 outline-0 "
+                  value={userSignup.password}
+                  onChange={(e) =>
+                    setUserSignup({ ...userSignup, password: e.target.value })
+                  }
                 />
-                <button className="bg-[#DB4444] text-white py-4 px-5 w-full cursor-pointer rounded">
+                {/* submit button */}
+                <button
+                  type="submit"
+                  className="bg-[#DB4444] text-white py-4 px-5 w-full cursor-pointer rounded"
+                  onClick={userSignupFunction}
+                >
                   Create Account
                 </button>
               </form>
