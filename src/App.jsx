@@ -14,6 +14,8 @@ import Checkout from "./pages/Checkout";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Error_404 from "./pages/Error_404";
+import Signup from "./pages/registration/Signup";
+import Login from "./pages/registration/Login";
 
 const App = () => {
   return (
@@ -30,6 +32,8 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/*" element={<Error_404 />} />
+        <Route path="/signup" element={<Signup/>}/>
+        <Route path="/login" element={<Login/>}/>
       </Routes>
       <Footer />
     </Router>
