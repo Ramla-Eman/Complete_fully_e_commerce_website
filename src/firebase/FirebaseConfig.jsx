@@ -5,12 +5,11 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDv8AUDRx2CH6ongnMrI05PY4qwwlcwS8g",
-  authDomain: "hackhtahonpracticereact.firebaseapp.com",
-  projectId: "hackhtahonpracticereact",
-  storageBucket: "hackhtahonpracticereact.firebasestorage.app",
-  messagingSenderId: "987837455685",
-  appId: "1:987837455685:web:d54bac7e555826d2b2322c"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase

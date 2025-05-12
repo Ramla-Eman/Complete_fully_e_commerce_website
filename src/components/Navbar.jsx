@@ -43,8 +43,8 @@ const Navbar = () => {
       url: "/about",
     },
     {
-      title: user ? "Logout" : "Sign Up",
-      url: user ? "/logout" : "/signup",
+      title: user ? "Logout" : "Log In",
+      url: user ? "/logout" : "/login",
     },
   ];
 
